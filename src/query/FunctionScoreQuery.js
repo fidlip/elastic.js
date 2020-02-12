@@ -17,9 +17,7 @@
      */
   ejs.FunctionScoreQuery = function () {
 
-    var
-      _common = ejs.QueryMixin('function_score'),
-      query = _common.toJSON();
+    let _common = ejs.QueryMixin('function_score'), query = _common.toJSON();
 
     return extend(_common, {
 
@@ -156,7 +154,7 @@
       @returns {Object} returns <code>this</code> so that calls can be chained.
       */
       functions: function (funcs) {
-        var i, len;
+        let i, len;
 
         if (funcs == null) {
           return query.function_score.functions;

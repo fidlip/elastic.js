@@ -21,8 +21,7 @@
       fieldName = '_score';
     }
   
-    var sort = {},
-      key = fieldName, // defaults to field search
+    let sort = {}, key = fieldName, // defaults to field search
       geo_key = '_geo_distance', // used when doing geo distance sort
       script_key = '_script'; // used when doing script sort
     
@@ -39,7 +38,7 @@
             @returns {Object} returns <code>this</code> so that calls can be chained.
             */
       field: function (f) {
-        var oldValue = sort[key];
+        let oldValue = sort[key];
       
         if (f == null) {
           return fieldName;
@@ -61,7 +60,7 @@
             @returns {Object} returns <code>this</code> so that calls can be chained.
             */
       geoDistance: function (point) {
-        var oldValue = sort[key];
+        let oldValue = sort[key];
       
         if (point == null) {
           return sort[key][fieldName];
@@ -87,7 +86,7 @@
             @returns {Object} returns <code>this</code> so that calls can be chained.
             */
       script: function (scriptCode) {
-        var oldValue = sort[key];
+        let oldValue = sort[key];
       
         if (scriptCode == null) {
           return sort[key].script;
@@ -415,6 +414,30 @@
         }
         
         sort[key].nested_filter = oFilter.toJSON();
+        return this;
+      },
+
+      /**
+       <p>Allows you to set a query in filter context that nested objects must match
+       in order to be considered during sorting.</p>
+
+       Valid during sort types: field, geo distance
+
+       @since elasticsearch 0.90
+       @member ejs.Sort
+       @param {Object} oQuery A valid <code>Query</code> object.
+       @returns {Object} returns <code>this</code> so that calls can be chained.
+       */
+      nestedQueryFilter: function(oQuery) {
+        if (oQuery == null) {
+          return sort[key].nested_filter;
+        }
+
+        if (!isQuery(oQuery)) {
+          throw new TypeError('Argument must be a Filter');
+        }
+
+        sort[key].nested_filter = oQuery.toJSON();
         return this;
       },
 

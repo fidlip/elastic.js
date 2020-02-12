@@ -21,9 +21,7 @@
     */
   ejs.MultiMatchQuery = function (fields, qstr) {
 
-    var 
-      _common = ejs.QueryMixin('multi_match'),
-      query = _common.toJSON();
+    let _common = ejs.QueryMixin('multi_match'), query = _common.toJSON();
     
     query.multi_match.query = qstr;
     query.multi_match.fields = [];

@@ -24,9 +24,7 @@
     */
   ejs.PercentilesAggregation = function (name) {
 
-    var
-      _common = ejs.MetricsAggregationMixin(name, 'percentiles'),
-      agg = _common.toJSON();
+    let _common = ejs.MetricsAggregationMixin(name, 'percentiles'), agg = _common.toJSON();
 
     return extend(_common, {
 
@@ -51,7 +49,7 @@
       Sets the percentile bucket array.  Overwrites all existing values.
 
       @member ejs.PercentilesAggregation
-      @param {Double[]} percents A double array of percentiles
+      @param {Double[]} percentArr A double array of percentiles
       @returns {Object} returns <code>this</code> so that calls can be chained.
       */
       percents: function (percentArr) {
@@ -101,11 +99,15 @@
       @returns {Object} returns <code>this</code> so that calls can be chained.
       */
       compression: function (c) {
+        let tdigest = agg[name].percentiles.tdigest;
         if (c == null) {
-          return agg[name].percentiles.compression;
+          return tdigest && tdigest.compression;
+        }
+        if (!tdigest) {
+          tdigest = agg[name].percentiles.tdigest = {};
         }
 
-        agg[name].percentiles.compression = c;
+        tdigest.compression = c;
         return this;
       }
 

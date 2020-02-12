@@ -22,9 +22,7 @@
       throw new TypeError('Argument must be a Query');
     }
     
-    var 
-      _common = ejs.QueryMixin('has_parent'),
-      query = _common.toJSON();
+    let _common = ejs.QueryMixin('has_parent'), query = _common.toJSON();
     
     query.has_parent.query = qry.toJSON();
     query.has_parent.parent_type = parentType;
@@ -73,10 +71,10 @@
 
             @deprecated since elasticsearch 0.90
             @member ejs.HasParentQuery
-            @param {String} s The scope name as a string.
+            // @param {String} s The scope name as a string.
             @returns {Object} returns <code>this</code> so that calls can be chained.
             */
-      scope: function (s) {
+      scope: function (/*s*/) {
         return this;
       },
 

@@ -18,9 +18,7 @@
     */
   ejs.ExistsFilter = function (fieldName) {
 
-    var 
-      _common = ejs.FilterMixin('exists'),
-      filter = _common.toJSON();
+    let _common = ejs.FilterMixin('exists'), filter = _common.toJSON();
     
     filter.exists.field = fieldName;
 

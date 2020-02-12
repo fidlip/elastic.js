@@ -21,9 +21,7 @@
     */
   ejs.GeoHashGridAggregation = function (name) {
 
-    var
-      _common = ejs.AggregationMixin(name),
-      agg = _common.toJSON();
+    let _common = ejs.AggregationMixin(name), agg = _common.toJSON();
 
     agg[name].geohash_grid = {};
 

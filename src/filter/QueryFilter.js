@@ -29,11 +29,9 @@
       throw new TypeError('Argument must be a Query');
     }
     
-    var
-      _common = ejs.FilterMixin('fquery'),
-      filter = _common.toJSON();
+    let _common = ejs.FilterMixin('query'), filter = _common.toJSON();
     
-    filter.fquery.query = qry.toJSON();
+    filter.query = qry.toJSON();
 
     return extend(_common, {
 
@@ -46,16 +44,21 @@
             */
       query: function (q) {
         if (q == null) {
-          return filter.fquery.query;
+          return filter.query;
         }
 
         if (!isQuery(q)) {
           throw new TypeError('Argument must be a Query');
         }
         
-        filter.fquery.query = q.toJSON();
+        filter.query = q.toJSON();
         return this;
-      }
+      },
+
+
+      toJSON: function() {
+        return filter.query;
+      },
       
     });
   };

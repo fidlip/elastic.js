@@ -17,9 +17,7 @@
     */
   ejs.RangeQuery = function (field) {
 
-    var
-      _common = ejs.QueryMixin('range'),
-      query = _common.toJSON();
+    let _common = ejs.QueryMixin('range'), query = _common.toJSON();
 
     query.range[field] = {};
 
@@ -33,7 +31,7 @@
              @returns {Object} returns <code>this</code> so that calls can be chained.
              */
       field: function (f) {
-        var oldValue = query.range[field];
+        let oldValue = query.range[field];
 
         if (f == null) {
           return field;

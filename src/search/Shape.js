@@ -17,10 +17,8 @@
     */
   ejs.Shape = function (type, coords) {
   
-    var 
-      shape = {},
-      validType = function (t) {
-        var valid = false;
+    let shape = {}, validType = function(t) {
+      let valid = false;
         if (t === 'point' || t === 'linestring' || t === 'polygon' || 
           t === 'multipoint' || t === 'envelope' || t === 'multipolygon' ||
           t === 'circle' || t === 'multilinestring') {

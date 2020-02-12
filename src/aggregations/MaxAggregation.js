@@ -24,9 +24,5 @@
     */
   ejs.MaxAggregation = function (name) {
 
-    var
-      _common = ejs.MetricsAggregationMixin(name, 'max'),
-      agg = _common.toJSON();
-
-    return _common;
+    return ejs.MetricsAggregationMixin(name, 'max');
   };

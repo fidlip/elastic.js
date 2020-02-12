@@ -35,11 +35,7 @@
     */
   ejs.TermSuggester = function (name) {
 
-    var
-      _direct,
-      _context,
-      _common = ejs.SuggesterMixin(name),
-      suggest = _common.toJSON();  
+    let _direct, _context, _common = ejs.SuggesterMixin(name), suggest = _common.toJSON();
     
     suggest[name].term = {};
     _direct = ejs.DirectSettingsMixin(suggest[name].term);

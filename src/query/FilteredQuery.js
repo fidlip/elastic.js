@@ -30,9 +30,7 @@
       throw new TypeError('Argument must be a Filter');
     }
     
-    var 
-      _common = ejs.QueryMixin('filtered'),
-      query = _common.toJSON();
+    let _common = ejs.QueryMixin('filtered'), query = _common.toJSON();
     
     query.filtered.query = someQuery.toJSON();
 
@@ -71,14 +69,14 @@
              */
       filter: function (oFilter) {
         if (oFilter == null) {
-          return query.filtered.filter;
+          return query.filter;
         }
       
         if (!isFilter(oFilter)) {
           throw new TypeError('Argument must be a Filter');
         }
         
-        query.filtered.filter = oFilter.toJSON();
+        query.filter = oFilter.toJSON();
         return this;
       },
 

@@ -16,14 +16,14 @@
     if (nativeForEach && obj.forEach === nativeForEach) {
       obj.forEach(iterator, context);
     } else if (obj.length === +obj.length) {
-      for (var i = 0, l = obj.length; i < l; i++) {
+      for (let i = 0, l = obj.length; i < l; i++) {
         if (iterator.call(context, obj[i], i, obj) === breaker) {
           return;
         }
       }
     } else {
-      for (var key in obj) {
-        if (has(obj, key)) {
+      for (let key in obj) {
+        if (obj.hasOwnProperty(key)) {
           if (iterator.call(context, obj[key], key, obj) === breaker) {
             return;
           }
@@ -35,8 +35,12 @@
   // Extend a given object with all the properties in passed-in object(s).
   extend = function (obj) {
     each(slice.call(arguments, 1), function (source) {
-      for (var prop in source) {
-        obj[prop] = source[prop];
+      for (let prop in source) {
+        // noinspection JSUnfilteredForInLoop
+        if (source.hasOwnProperty(prop)) {
+          // noinspection JSUnfilteredForInLoop
+            obj[prop] = source[prop];
+          }
       }
     });
     return obj;
@@ -49,7 +53,7 @@
       return -1;
     }
 
-    var i = 0, l = array.length;
+    let i = 0, l = array.length;
     if (nativeIndexOf && array.indexOf === nativeIndexOf) {
       return array.indexOf(item);
     }
@@ -106,6 +110,7 @@
   isEJSObject = function (obj) {
     return (isObject(obj) &&
       has(obj, '_type') &&
+        isFunction( obj._type) &&
       has(obj, 'toJSON'));
   };
 

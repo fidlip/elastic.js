@@ -40,9 +40,7 @@
     */
   ejs.HistogramFacet = function (name) {
 
-    var 
-      _common = ejs.FacetMixin(name),
-      facet = _common.toJSON();
+    let _common = ejs.FacetMixin(name), facet = _common.toJSON();
 
     facet[name].histogram = {};
 

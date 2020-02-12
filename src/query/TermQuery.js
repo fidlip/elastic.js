@@ -19,9 +19,7 @@
     */
   ejs.TermQuery = function (field, term) {
 
-    var
-      _common = ejs.QueryMixin('term'),
-      query = _common.toJSON();
+    let _common = ejs.QueryMixin('term'), query = _common.toJSON();
 
     query.term[field] = {
       term: term
@@ -37,7 +35,7 @@
             @returns {Object} returns <code>this</code> so that calls can be chained.
             */
       field: function (f) {
-        var oldValue = query.term[field];
+        let oldValue = query.term[field];
       
         if (f == null) {
           return field;

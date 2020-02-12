@@ -32,9 +32,7 @@
     */
   ejs.FuzzyLikeThisQuery = function (likeText) {
 
-    var 
-      _common = ejs.QueryMixin('flt'),
-      query = _common.toJSON();
+    let _common = ejs.QueryMixin('flt'), query = _common.toJSON();
     
     query.flt.like_text = likeText;
 
@@ -73,7 +71,7 @@
             The text to find documents like
 
             @member ejs.FuzzyLikeThisQuery
-            @param {String} s A text string.
+            @param {String} txt A text string.
             @returns {Object} returns <code>this</code> so that calls can be chained.
             */
       likeText: function (txt) {

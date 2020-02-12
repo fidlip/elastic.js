@@ -16,9 +16,7 @@
     */
   ejs.ScriptScoreFunction = function () {
 
-    var
-      _common = ejs.ScoreFunctionMixin('script_score'),
-      func = _common.toJSON();
+    let _common = ejs.ScoreFunctionMixin('script_score'), func = _common.toJSON();
 
     return extend(_common, {
 
@@ -35,6 +33,22 @@
         }
 
         func.script_score.script = scriptCode;
+        return this;
+      },
+
+      /**
+       Set the script_id that will modify the score.
+
+       @member ejs.ScriptScoreFunction
+       @param {String} scriptId A valid script_id string to execute.
+       @returns {Object} returns <code>this</code> so that calls can be chained.
+       */
+      scriptId: function(scriptId) {
+        if (scriptId == null) {
+          return func.script_score.script_id;
+        }
+
+        func.script_score.script_id = scriptId;
         return this;
       },
 

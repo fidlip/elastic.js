@@ -24,9 +24,5 @@
     */
   ejs.MinAggregation = function (name) {
 
-    var
-      _common = ejs.MetricsAggregationMixin(name, 'min'),
-      agg = _common.toJSON();
-
-    return _common;
+    return ejs.MetricsAggregationMixin(name, 'min');
   };

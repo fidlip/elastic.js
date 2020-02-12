@@ -28,9 +28,7 @@
     */
   ejs.NumericRangeFilter = function (fieldName) {
 
-    var
-      _common = ejs.FilterMixin('numeric_range'),
-      filter = _common.toJSON();
+    let _common = ejs.FilterMixin('numeric_range'), filter = _common.toJSON();
 
     filter.numeric_range[fieldName] = {};
 
@@ -45,7 +43,7 @@
               chained. Returns {String}, field name when field is not specified.
              */
       field: function (field) {
-        var oldValue = filter.numeric_range[fieldName];
+        let oldValue = filter.numeric_range[fieldName];
       
         if (field == null) {
           return fieldName;
@@ -62,7 +60,7 @@
              Sets the endpoint for the current range.
 
              @member ejs.NumericRangeFilter
-             @param {Number} startPoint A numeric value representing the start of the range
+             @param {Number} from A numeric value representing the start of the range
              @returns {Object} returns <code>this</code> so that calls can be chained.
              */
       from: function (from) {
@@ -82,7 +80,7 @@
              Sets the endpoint for the current range.
 
              @member ejs.NumericRangeFilter
-             @param {Number} endPoint A numeric value representing the end of the range
+             @param {Number} to A numeric value representing the end of the range
              @returns {Object} returns <code>this</code> so that calls can be chained.
              */
       to: function (to) {

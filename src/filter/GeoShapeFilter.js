@@ -23,9 +23,7 @@
     */
   ejs.GeoShapeFilter = function (field) {
 
-    var
-      _common = ejs.FilterMixin('geo_shape'),
-      filter = _common.toJSON();
+    let _common = ejs.FilterMixin('geo_shape'), filter = _common.toJSON();
     
     filter.geo_shape[field] = {};
 
@@ -39,7 +37,7 @@
             @returns {Object} returns <code>this</code> so that calls can be chained.
             */
       field: function (f) {
-        var oldValue = filter.geo_shape[field];
+        let oldValue = filter.geo_shape[field];
   
         if (f == null) {
           return field;
@@ -100,7 +98,7 @@
             and within.
 
             @member ejs.GeoShapeFilter
-            @param {String} indexedShape A valid <code>IndexedShape</code> object.
+            @param {String} relation Relation intersect|disjoint|within.
             @returns {Object} returns <code>this</code> so that calls can be chained.
             */
       relation: function (relation) {

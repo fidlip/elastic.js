@@ -26,9 +26,7 @@
     */
   ejs.DateHistogramAggregation = function (name) {
 
-    var
-      _common = ejs.AggregationMixin(name),
-      agg = _common.toJSON();
+    let _common = ejs.AggregationMixin(name), agg = _common.toJSON();
 
     agg[name].date_histogram = {};
 
@@ -173,7 +171,7 @@
       @returns {Object} returns <code>this</code> so that calls can be chained.
       */
       extendedBounds: function (min, max) {
-        var bounds;
+        let bounds;
         if (min == null && max == null) {
           return agg[name].date_histogram.extended_bounds;
         }

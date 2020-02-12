@@ -19,9 +19,7 @@
     */
   ejs.TermsFilter = function (field, terms) {
 
-    var
-      _common = ejs.FilterMixin('terms'),
-      filter = _common.toJSON(),
+    let _common = ejs.FilterMixin('terms'), filter = _common.toJSON(),
     
       // make sure we are setup for a list of terms
       setupTerms = function () {
@@ -53,7 +51,7 @@
             @returns {Object} returns <code>this</code> so that calls can be chained.
             */
       field: function (f) {
-        var oldValue = filter.terms[field];
+        let oldValue = filter.terms[field];
     
         if (f == null) {
           return field;
@@ -177,13 +175,13 @@
             @param {String} path A valid index name.
             @returns {Object} returns <code>this</code> so that calls can be chained.
             */
-      routing: function (r) {
+      routing: function (path) {
         setupLookup();
-        if (r == null) {
+        if (path == null) {
           return filter.terms[field].routing;
         }
         
-        filter.terms[field].routing = r;
+        filter.terms[field].routing = path;
         return this;
       },
       

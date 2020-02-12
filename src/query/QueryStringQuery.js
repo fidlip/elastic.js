@@ -20,9 +20,7 @@
     */
   ejs.QueryStringQuery = function (qstr) {
 
-    var
-      _common = ejs.QueryMixin('query_string'),
-      query = _common.toJSON();
+    let _common = ejs.QueryMixin('query_string'), query = _common.toJSON();
 
     query.query_string.query = qstr;
 

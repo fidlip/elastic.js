@@ -26,9 +26,7 @@
       throw new TypeError('Argument must be a Filter');
     }
   
-    var 
-      _common = ejs.FilterMixin('indices'),
-      filter = _common.toJSON();
+    let _common = ejs.FilterMixin('indices'), filter = _common.toJSON();
     
     filter.indices.filter = fltr.toJSON();
 

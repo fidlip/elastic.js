@@ -22,9 +22,7 @@
       throw new TypeError('Argument must be a Filter');
     }
     
-    var 
-      _common = ejs.FilterMixin('not'),
-      filter = _common.toJSON();
+    let _common = ejs.FilterMixin('not'), filter = _common.toJSON();
     
     filter.not = oFilter.toJSON();
 

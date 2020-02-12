@@ -26,7 +26,7 @@
   ejs.DirectGenerator = function () {
 
   
-    var
+    let
   
     generator = {},
     _common = ejs.DirectSettingsMixin(generator);

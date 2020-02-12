@@ -18,9 +18,7 @@
     */
   ejs.TermsAggregation = function (name) {
 
-    var
-      _common = ejs.AggregationMixin(name),
-      agg = _common.toJSON();
+    let _common = ejs.AggregationMixin(name), agg = _common.toJSON();
 
     agg[name].terms = {};
 
@@ -122,20 +120,26 @@
       character.</p>
 
       @member ejs.TermsAggregation
-      @param {String} include A regular expression include string
-      @param {String} flags Optional regular expression flags..
+      @param {(String|String[])} include A single term to include or an array of terms to include.
+      @param {String} flags Optional regular expression flags.
       @returns {Object} returns <code>this</code> so that calls can be chained.
       */
       include: function (include, flags) {
         if (agg[name].terms.include == null) {
-          agg[name].terms.include = {};
+          agg[name].terms.include = [];
         }
 
         if (include == null) {
-          return agg[name].terms.include;
+          return this;
         }
 
-        agg[name].terms.include.pattern = include;
+        if (isString(include)) {
+          agg[name].terms.include.push(include);
+        } else if (isArray(include)) {
+          agg[name].terms.include = include;
+        } else {
+          throw new TypeError('Argument must be string or array');
+        }
         if (flags != null) {
           agg[name].terms.include.flags = flags;
         }
@@ -152,20 +156,26 @@
       character.</p>
 
       @member ejs.TermsAggregation
-      @param {String} exclude A regular expression exclude string
+      @param {(String|String[])} exclude A single term to exclude or an array of terms to exclude.
       @param {String} flags Optional regular expression flags..
       @returns {Object} returns <code>this</code> so that calls can be chained.
       */
       exclude: function (exclude, flags) {
         if (agg[name].terms.exclude == null) {
-          agg[name].terms.exclude = {};
+          agg[name].terms.exclude = [];
         }
 
         if (exclude == null) {
-          return agg[name].terms.exclude;
+          return this;
         }
 
-        agg[name].terms.exclude.pattern = exclude;
+        if (isString(exclude)) {
+          agg[name].terms.exclude.push(exclude);
+        } else if (isArray(exclude)) {
+          agg[name].terms.exclude = exclude;
+        } else {
+          throw new TypeError('Argument must be string or array');
+        }
         if (flags != null) {
           agg[name].terms.exclude.flags = flags;
         }

@@ -20,9 +20,7 @@
     */
   ejs.RegexpFilter = function (field, value) {
 
-    var
-    _common = ejs.FilterMixin('regexp'),
-    filter = _common.toJSON();
+    let _common = ejs.FilterMixin('regexp'), filter = _common.toJSON();
 
     filter.regexp[field] = {
       value: value
@@ -38,7 +36,7 @@
              @returns {Object} returns <code>this</code> so that calls can be chained.
              */
       field: function (f) {
-        var oldValue = filter.regexp[field];
+        let oldValue = filter.regexp[field];
 
         if (f == null) {
           return field;

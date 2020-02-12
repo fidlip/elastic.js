@@ -8,7 +8,7 @@
     */
   ejs.FilterMixin = function (type) {
 
-    var filter = {};
+    let filter = {};
     filter[type] = {};
 
     return {

@@ -17,9 +17,7 @@
     */
   ejs.SpanTermQuery = function (field, value) {
 
-    var
-      _common = ejs.QueryMixin('span_term'),
-      query = _common.toJSON();
+    let _common = ejs.QueryMixin('span_term'), query = _common.toJSON();
 
     query.span_term[field] = {
       term: value
@@ -35,7 +33,7 @@
             @returns {Object} returns <code>this</code> so that calls can be chained.
             */
       field: function (f) {
-        var oldValue = query.span_term[field];
+        let oldValue = query.span_term[field];
       
         if (f == null) {
           return field;

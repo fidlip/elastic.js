@@ -39,15 +39,10 @@
     */
   ejs.GeoDistanceFacet = function (name) {
 
-    var
-      _common = ejs.FacetMixin(name),
-      facet = _common.toJSON(),
-      point = ejs.GeoPoint([0, 0]),
-      field = 'location';
+    let _common = ejs.FacetMixin(name), facet = _common.toJSON(), point = ejs.GeoPoint([0, 0]), field = 'location';
 
     facet[name].geo_distance = {
-      location: point.toJSON(),
-      ranges: []
+      location: point.toJSON(), ranges: [],
     };
 
     return extend(_common, {
@@ -61,7 +56,7 @@
             @returns {Object} returns <code>this</code> so that calls can be chained.
             */
       field: function (fieldName) {
-        var oldValue = facet[name].geo_distance[field];
+        let oldValue = facet[name].geo_distance[field];
         
         if (fieldName == null) {
           return field;
@@ -109,8 +104,7 @@
         }
       
         facet[name].geo_distance.ranges.push({
-          from: from,
-          to: to
+          from: from, to: to,
         });
         
         return this;

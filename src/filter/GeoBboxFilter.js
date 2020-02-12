@@ -19,9 +19,7 @@
     */
   ejs.GeoBboxFilter = function (fieldName) {
 
-    var
-      _common = ejs.FilterMixin('geo_bounding_box'),
-      filter = _common.toJSON();
+    let _common = ejs.FilterMixin('geo_bounding_box'), filter = _common.toJSON();
     
     filter.geo_bounding_box[fieldName] = {};
 
@@ -35,7 +33,7 @@
             @returns {Object} returns <code>this</code> so that calls can be chained.
             */
       field: function (f) {
-        var oldValue = filter.geo_bounding_box[fieldName];
+        let oldValue = filter.geo_bounding_box[fieldName];
     
         if (f == null) {
           return fieldName;

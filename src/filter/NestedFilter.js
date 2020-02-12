@@ -26,9 +26,7 @@
      */
   ejs.NestedFilter = function (path) {
 
-    var 
-      _common = ejs.FilterMixin('nested'),
-      filter = _common.toJSON();
+    let _common = ejs.FilterMixin('nested'), filter = _common.toJSON();
     
     filter.nested.path = path;
 
@@ -127,10 +125,10 @@
 
             @deprecated since elasticsearch 0.90
             @member ejs.NestedFilter
-            @param {String} s The scope name as a string.
+            // @param {String} s The scope name as a string.
             @returns {Object} returns <code>this</code> so that calls can be chained.
             */
-      scope: function (s) {
+      scope: function (/*s*/) {
         return this;
       }
       

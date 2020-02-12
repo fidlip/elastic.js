@@ -19,9 +19,7 @@
     */
   ejs.SignificantTermsAggregation = function (name) {
 
-    var
-      _common = ejs.AggregationMixin(name),
-      agg = _common.toJSON();
+    let _common = ejs.AggregationMixin(name), agg = _common.toJSON();
 
     agg[name].significant_terms = {};
 
@@ -69,20 +67,26 @@
       character.</p>
 
       @member ejs.SignificantTermsAggregation
-      @param {String} include A regular expression include string
+      @param {(String|String[])} include A single term to exinude or an array of terms to include.
       @param {String} flags Optional regular expression flags..
       @returns {Object} returns <code>this</code> so that calls can be chained.
       */
       include: function (include, flags) {
         if (agg[name].significant_terms.include == null) {
-          agg[name].significant_terms.include = {};
+          agg[name].significant_terms.include = [];
         }
 
         if (include == null) {
-          return agg[name].significant_terms.include;
+          return this;
         }
 
-        agg[name].significant_terms.include.pattern = include;
+        if (isString(include)) {
+          agg[name].significant_terms.include.push(include);
+        } else if (isArray(include)) {
+          agg[name].significant_terms.include = include;
+        } else {
+          throw new TypeError('Argument must be string or array');
+        }
         if (flags != null) {
           agg[name].significant_terms.include.flags = flags;
         }
@@ -99,20 +103,26 @@
       character.</p>
 
       @member ejs.SignificantTermsAggregation
-      @param {String} exclude A regular expression exclude string
+      @param {(String|String[])} exclude A single term to exclude or an array of terms to exclude.
       @param {String} flags Optional regular expression flags..
       @returns {Object} returns <code>this</code> so that calls can be chained.
       */
       exclude: function (exclude, flags) {
         if (agg[name].significant_terms.exclude == null) {
-          agg[name].significant_terms.exclude = {};
+          agg[name].significant_terms.exclude = [];
         }
 
         if (exclude == null) {
-          return agg[name].significant_terms.exclude;
+          return this;
         }
 
-        agg[name].significant_terms.exclude.pattern = exclude;
+        if (isString(exclude)) {
+          agg[name].significant_terms.exclude.push(exclude);
+        } else if (isArray(exclude)) {
+          agg[name].significant_terms.exclude = exclude;
+        } else {
+          throw new TypeError('Argument must be string or array');
+        }
         if (flags != null) {
           agg[name].significant_terms.exclude.flags = flags;
         }

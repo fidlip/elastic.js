@@ -18,9 +18,7 @@
      */
   ejs.MoreLikeThisQuery = function (fields, likeText) {
 
-    var 
-      _common = ejs.QueryMixin('mlt'),
-      query = _common.toJSON();
+    let _common = ejs.QueryMixin('mlt'), query = _common.toJSON();
     
     query.mlt.like_text = likeText;
     query.mlt.fields = [];
@@ -64,7 +62,7 @@
             The text to find documents like
 
             @member ejs.MoreLikeThisQuery
-            @param {String} s A text string.
+            @param {String} txt A text string.
             @returns {Object} returns <code>this</code> so that calls can be chained.
             */
       likeText: function (txt) {

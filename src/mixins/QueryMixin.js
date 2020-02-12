@@ -8,7 +8,7 @@
     */
   ejs.QueryMixin = function (type) {
 
-    var query = {};
+    let query = {};
     query[type] = {};
 
     return {

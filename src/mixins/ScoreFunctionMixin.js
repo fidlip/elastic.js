@@ -8,7 +8,7 @@
     */
   ejs.ScoreFunctionMixin = function (name) {
 
-    var func = {};
+    let func = {};
     func[name] = {};
 
     return {

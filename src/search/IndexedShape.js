@@ -18,9 +18,8 @@
     */
   ejs.IndexedShape = function (type, id) {
 
-    var indexedShape = {
-      type: type,
-      id: id
+    let indexedShape = {
+      type: type, id: id,
     };
 
     return {

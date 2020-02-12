@@ -22,9 +22,7 @@
       throw new TypeError('Argument must be a SpanQuery');
     }
     
-    var
-      _common = ejs.QueryMixin('span_not'),
-      query = _common.toJSON();
+    let _common = ejs.QueryMixin('span_not'), query = _common.toJSON();
     
     query.span_not.include = includeQry.toJSON();
     query.span_not.exclude = excludeQry.toJSON();

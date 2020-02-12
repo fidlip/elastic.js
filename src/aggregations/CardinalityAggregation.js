@@ -21,9 +21,7 @@
     */
   ejs.CardinalityAggregation = function (name) {
 
-    var
-      _common = ejs.MetricsAggregationMixin(name, 'cardinality'),
-      agg = _common.toJSON();
+    let _common = ejs.MetricsAggregationMixin(name, 'cardinality'), agg = _common.toJSON();
 
     // not supported in cardinality aggregation
     delete _common.scriptValuesSorted;

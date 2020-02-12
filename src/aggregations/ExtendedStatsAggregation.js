@@ -28,9 +28,5 @@
     */
   ejs.ExtendedStatsAggregation = function (name) {
 
-    var
-      _common = ejs.MetricsAggregationMixin(name, 'extended_stats'),
-      agg = _common.toJSON();
-
-    return _common;
+    return ejs.MetricsAggregationMixin(name, 'extended_stats');
   };

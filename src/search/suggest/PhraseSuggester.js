@@ -25,10 +25,7 @@
     */
   ejs.PhraseSuggester = function (name) {
 
-    var
-      _context,
-      _common = ejs.SuggesterMixin(name),
-      suggest = _common.toJSON();
+    let _context, _common = ejs.SuggesterMixin(name), suggest = _common.toJSON();
 
     suggest[name].phrase = {};
     _context = ejs.SuggestContextMixin(suggest[name].phrase);
@@ -95,7 +92,7 @@
             considered to be misspellings in order to form a correction.</p>
 
             @member ejs.PhraseSuggester
-            @param {Double} c A positive double value greater between 0 and 1.
+            @param {Double} max A positive double value greater between 0 and 1.
             @returns {Object} returns <code>this</code> so that calls can be chained.
             */
       maxErrors: function (max) {
@@ -263,7 +260,7 @@
             @returns {Object} returns <code>this</code> so that calls can be chained.
             */
       directGenerator: function (oGenerator) {
-        var i, len;
+        let i, len;
 
         if (suggest[name].phrase.direct_generator == null) {
           suggest[name].phrase.direct_generator = [];

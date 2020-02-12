@@ -18,11 +18,7 @@
     */
   ejs.SpanNearQuery = function (clauses, slop) {
 
-    var 
-      i, 
-      len,
-      _common = ejs.QueryMixin('span_near'),
-      query = _common.toJSON();
+    let i, len, _common = ejs.QueryMixin('span_near'), query = _common.toJSON();
     
     query.span_near.clauses = [];
     query.span_near.slop = slop;
@@ -53,7 +49,7 @@
             @returns {Object} returns <code>this</code> so that calls can be chained.
             */
       clauses: function (clauses) {
-        var i, len;
+        let i, len;
         
         if (clauses == null) {
           return query.span_near.clauses;

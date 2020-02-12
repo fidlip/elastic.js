@@ -18,9 +18,7 @@
   ejs.MissingFilter = function (fieldName) {
 
     
-    var 
-      _common = ejs.FilterMixin('missing'),
-      filter = _common.toJSON();
+    let _common = ejs.FilterMixin('missing'), filter = _common.toJSON();
     
     filter.missing.field = fieldName;
 

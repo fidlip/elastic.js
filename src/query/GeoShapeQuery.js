@@ -20,9 +20,7 @@
     */
   ejs.GeoShapeQuery = function (field) {
 
-    var
-      _common = ejs.QueryMixin('geo_shape'),
-      query = _common.toJSON();
+    let _common = ejs.QueryMixin('geo_shape'), query = _common.toJSON();
 
     query.geo_shape[field] = {};
 
@@ -36,7 +34,7 @@
             @returns {Object} returns <code>this</code> so that calls can be chained.
             */
       field: function (f) {
-        var oldValue = query.geo_shape[field];
+        let oldValue = query.geo_shape[field];
     
         if (f == null) {
           return field;
@@ -53,7 +51,7 @@
             Sets the shape
 
             @member ejs.GeoShapeQuery
-            @param {String} shape A valid <code>Shape</code> object.
+            @param {Shape} shape A valid <code>Shape</code> object.
             @returns {Object} returns <code>this</code> so that calls can be chained.
             */
       shape: function (shape) {
@@ -74,7 +72,7 @@
             already indexed.
 
             @member ejs.GeoShapeQuery
-            @param {String} indexedShape A valid <code>IndexedShape</code> object.
+            @param {IndexedShape} indexedShape A valid <code>IndexedShape</code> object.
             @returns {Object} returns <code>this</code> so that calls can be chained.
             */
       indexedShape: function (indexedShape) {
@@ -97,7 +95,7 @@
             and within.
 
             @member ejs.GeoShapeQuery
-            @param {String} indexedShape A valid <code>IndexedShape</code> object.
+            @param {String} relation Relation intersect|disjoint|within.
             @returns {Object} returns <code>this</code> so that calls can be chained.
             */
       relation: function (relation) {

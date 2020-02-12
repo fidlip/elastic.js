@@ -8,7 +8,7 @@
     */
   ejs.FacetMixin = function (name) {
 
-    var facet = {};
+    let facet = {};
     facet[name] = {};
     
     return {
@@ -95,10 +95,10 @@
 
             @deprecated since elasticsearch 0.90
             @member ejs.FacetMixin
-            @param {String} scope The scope name to calculate facet counts with.
+            // @param {String} scope The scope name to calculate facet counts with.
             @returns {Object} returns <code>this</code> so that calls can be chained.
             */
-      scope: function (scope) {
+      scope: function (/*scope*/) {
         return this;
       },
       

@@ -6,7 +6,8 @@
 (function () {
   'use strict';
 
-  var
+  // noinspection JSUnusedLocalSymbols
+  let
 
     // save reference to global object
     // `window` in browser
@@ -56,6 +57,7 @@
     ejs;
 
   if (typeof exports !== 'undefined') {
+    // noinspection JSUnusedAssignment
     ejs = exports;
   } else {
     ejs = root.ejs = {};

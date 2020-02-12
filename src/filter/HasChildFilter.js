@@ -19,9 +19,7 @@
     */
   ejs.HasChildFilter = function (qryOrFltr, type) {
 
-    var
-      _common = ejs.FilterMixin('has_child'),
-      filter = _common.toJSON();
+    let _common = ejs.FilterMixin('has_child'), filter = _common.toJSON();
 
     if (isQuery(qryOrFltr)) {
       filter.has_child.query = qryOrFltr.toJSON();
@@ -114,10 +112,10 @@
 
             @deprecated since elasticsearch 0.90
             @member ejs.HasChildFilter
-            @param {String} s The scope name as a string.
+            // @param {String} s The scope name as a string.
             @returns {Object} returns <code>this</code> so that calls can be chained.
             */
-      scope: function (s) {
+      scope: function (/*s*/) {
         return this;
       }
 

@@ -12,9 +12,7 @@
     */
   ejs.MetricsAggregationMixin = function (name, type) {
 
-    var
-      _common = ejs.AggregationMixin(name),
-      agg = _common.toJSON();
+    let _common = ejs.AggregationMixin(name), agg = _common.toJSON();
 
     // remove ability for sub-aggregations since metrics aggregations dont
     // support them.

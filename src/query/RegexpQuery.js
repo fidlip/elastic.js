@@ -17,9 +17,7 @@
     */
   ejs.RegexpQuery = function (field, value) {
 
-    var
-      _common = ejs.QueryMixin('regexp'),
-      query = _common.toJSON();
+    let _common = ejs.QueryMixin('regexp'), query = _common.toJSON();
 
     query.regexp[field] = {
       value: value
@@ -35,7 +33,7 @@
              @returns {Object} returns <code>this</code> so that calls can be chained.
              */
       field: function (f) {
-        var oldValue = query.regexp[field];
+        let oldValue = query.regexp[field];
 
         if (f == null) {
           return field;

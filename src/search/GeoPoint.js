@@ -15,7 +15,7 @@
     */
   ejs.GeoPoint = function (p) {
 
-    var point = [0, 0];
+    let point = [0, 0];
 
     // p  = [lat, lon], convert it to GeoJSON format of [lon, lat]
     if (p != null && isArray(p) && p.length === 2) {

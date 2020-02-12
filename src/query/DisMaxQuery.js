@@ -18,9 +18,7 @@
     */
   ejs.DisMaxQuery = function () {
 
-    var
-      _common = ejs.QueryMixin('dis_max'),
-      query = _common.toJSON();
+    let _common = ejs.QueryMixin('dis_max'), query = _common.toJSON();
 
     return extend(_common, {
 
@@ -34,7 +32,7 @@
             @returns {Object} returns <code>this</code> so that calls can be chained.
             */
       queries: function (qs) {
-        var i, len;
+        let i, len;
         
         if (qs == null) {
           return query.dis_max.queries;

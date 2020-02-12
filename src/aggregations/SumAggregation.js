@@ -24,9 +24,5 @@
     */
   ejs.SumAggregation = function (name) {
 
-    var
-      _common = ejs.MetricsAggregationMixin(name, 'sum'),
-      agg = _common.toJSON();
-
-    return _common;
+    return ejs.MetricsAggregationMixin(name, 'sum');
   };

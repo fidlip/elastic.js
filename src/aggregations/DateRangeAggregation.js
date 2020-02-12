@@ -25,9 +25,7 @@
     */
   ejs.DateRangeAggregation = function (name) {
 
-    var
-      _common = ejs.AggregationMixin(name),
-      agg = _common.toJSON();
+    let _common = ejs.AggregationMixin(name), agg = _common.toJSON();
 
     agg[name].date_range = {};
 
@@ -107,7 +105,7 @@
       @returns {Object} returns <code>this</code> so that calls can be chained.
       */
       range: function (from, to, key) {
-        var rangeObj = {};
+        let rangeObj = {};
         if (agg[name].date_range.ranges == null) {
           agg[name].date_range.ranges = [];
         }

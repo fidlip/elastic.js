@@ -18,9 +18,7 @@
     */
   ejs.GeoPolygonFilter = function (fieldName) {
 
-    var
-      _common = ejs.FilterMixin('geo_polygon'),
-      filter = _common.toJSON(); 
+    let _common = ejs.FilterMixin('geo_polygon'), filter = _common.toJSON();
 
     filter.geo_polygon[fieldName] = {
       points: []
@@ -36,7 +34,7 @@
            @returns {Object} returns <code>this</code> so that calls can be chained.
            */
       field: function (f) {
-        var oldValue = filter.geo_polygon[fieldName];
+        let oldValue = filter.geo_polygon[fieldName];
 
         if (f == null) {
           return fieldName;
@@ -59,23 +57,23 @@
              @param {Array} pointsArray the array of points that represent the polygon
              @returns {Object} returns <code>this</code> so that calls can be chained.
              */
-      points: function (p) {
-        var i, len;
+      points: function (pointsArray) {
+        let i, len;
         
-        if (p == null) {
+        if (pointsArray == null) {
           return filter.geo_polygon[fieldName].points;
         }
       
-        if (isGeoPoint(p)) {
-          filter.geo_polygon[fieldName].points.push(p.toJSON());
-        } else if (isArray(p)) {
+        if (isGeoPoint(pointsArray)) {
+          filter.geo_polygon[fieldName].points.push(pointsArray.toJSON());
+        } else if (isArray(pointsArray)) {
           filter.geo_polygon[fieldName].points = [];
-          for (i = 0, len = p.length; i < len; i++) {
-            if (!isGeoPoint(p[i])) {
+          for (i = 0, len = pointsArray.length; i < len; i++) {
+            if (!isGeoPoint(pointsArray[i])) {
               throw new TypeError('Argument must be Array of GeoPoints');
             }
             
-            filter.geo_polygon[fieldName].points.push(p[i].toJSON());
+            filter.geo_polygon[fieldName].points.push(pointsArray[i].toJSON());
           }
         } else {
           throw new TypeError('Argument must be a GeoPoint or Array of GeoPoints');

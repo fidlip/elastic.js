@@ -20,9 +20,7 @@
     */
   ejs.IPv4RangeAggregation = function (name) {
 
-    var
-      _common = ejs.AggregationMixin(name),
-      agg = _common.toJSON();
+    let _common = ejs.AggregationMixin(name), agg = _common.toJSON();
 
     agg[name].ip_range = {};
 
@@ -82,11 +80,12 @@
       @member ejs.IPv4RangeAggregation
       @param {String} from The start value, use null to ignore
       @param {String} to The end value, use null to ignore.
+      @param {String} mask TODO:
       @param {String} key Optional key/bucket name for keyed responses.
       @returns {Object} returns <code>this</code> so that calls can be chained.
       */
       range: function (from, to, mask, key) {
-        var rangeObj = {};
+        let rangeObj = {};
         if (agg[name].ip_range.ranges == null) {
           agg[name].ip_range.ranges = [];
         }

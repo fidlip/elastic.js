@@ -35,9 +35,7 @@
     */
   ejs.FuzzyLikeThisFieldQuery = function (field, likeText) {
 
-    var
-      _common = ejs.QueryMixin('flt_field'),
-      query = _common.toJSON();
+    let _common = ejs.QueryMixin('flt_field'), query = _common.toJSON();
 
     query.flt_field[field] = {
       like_text: likeText
@@ -53,7 +51,7 @@
              @returns {Object} returns <code>this</code> so that calls can be chained.
              */
       field: function (f) {
-        var oldValue = query.flt_field[field];
+        let oldValue = query.flt_field[field];
       
         if (f == null) {
           return field;
@@ -70,7 +68,7 @@
             The text to find documents like
 
             @member ejs.FuzzyLikeThisFieldQuery
-            @param {String} s A text string.
+            @param {String} txt A text string.
             @returns {Object} returns <code>this</code> so that calls can be chained.
             */
       likeText: function (txt) {

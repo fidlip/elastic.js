@@ -25,9 +25,7 @@
       throw new TypeError('Argument must be a SpanQuery');
     }
   
-    var 
-      _common = ejs.QueryMixin('field_masking_span'),
-      query = _common.toJSON();
+    let _common = ejs.QueryMixin('field_masking_span'), query = _common.toJSON();
     
     query.field_masking_span.query = spanQry.toJSON();
     query.field_masking_span.field = field;

@@ -24,10 +24,7 @@
     */
   ejs.GeoDistanceAggregation = function (name) {
 
-    var
-      _common = ejs.AggregationMixin(name),
-      point = ejs.GeoPoint([0, 0]),
-      agg = _common.toJSON();
+    let _common = ejs.AggregationMixin(name), point = ejs.GeoPoint([0, 0]), agg = _common.toJSON();
 
     agg[name].geo_distance = {};
 
@@ -168,7 +165,7 @@
       @returns {Object} returns <code>this</code> so that calls can be chained.
       */
       range: function (from, to, key) {
-        var rangeObj = {};
+        let rangeObj = {};
         if (agg[name].geo_distance.ranges == null) {
           agg[name].geo_distance.ranges = [];
         }

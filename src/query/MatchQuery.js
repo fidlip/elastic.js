@@ -18,9 +18,7 @@
     */
   ejs.MatchQuery = function (field, qstr) {
 
-    var
-      _common = ejs.QueryMixin('match'),
-      query = _common.toJSON();
+    let _common = ejs.QueryMixin('match'), query = _common.toJSON();
     
     query.match[field] = {
       query: qstr

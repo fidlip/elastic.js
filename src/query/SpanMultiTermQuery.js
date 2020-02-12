@@ -21,9 +21,7 @@
       throw new TypeError('Argument must be a MultiTermQuery');
     }
 
-    var 
-      _common = ejs.QueryMixin('span_multi'),
-      query = _common.toJSON();
+    let _common = ejs.QueryMixin('span_multi'), query = _common.toJSON();
     
     query.span_multi.match = {};
     

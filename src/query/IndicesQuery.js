@@ -24,9 +24,7 @@
       throw new TypeError('Argument must be a Query');
     }
     
-    var 
-      _common = ejs.QueryMixin('indices'),
-      query = _common.toJSON();
+    let _common = ejs.QueryMixin('indices'), query = _common.toJSON();
     
     query.indices.query = qry.toJSON();
 

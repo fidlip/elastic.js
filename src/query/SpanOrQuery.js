@@ -17,11 +17,7 @@
     */
   ejs.SpanOrQuery = function (clauses) {
 
-    var
-      i, 
-      len,
-      _common = ejs.QueryMixin('span_or'),
-      query = _common.toJSON();
+    let i, len, _common = ejs.QueryMixin('span_or'), query = _common.toJSON();
     
     query.span_or.clauses = [];
 
@@ -51,7 +47,7 @@
             @returns {Object} returns <code>this</code> so that calls can be chained.
             */
       clauses: function (clauses) {
-        var i, len;
+        let i, len;
         
         if (clauses == null) {
           return query.span_or.clauses;

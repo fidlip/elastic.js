@@ -25,9 +25,7 @@
       throw new TypeError('Arguments must be Queries');
     }
     
-    var 
-      _common = ejs.QueryMixin('boosting'),
-      query = _common.toJSON();
+    let _common = ejs.QueryMixin('boosting'), query = _common.toJSON();
     
     query.boosting.positive = positiveQry.toJSON();
     query.boosting.negative = negativeQry.toJSON();
@@ -84,7 +82,7 @@
             Sets the negative boost value.
 
             @member ejs.BoostingQuery
-            @param {Double} boost A positive <code>double</code> value where 0 < n < 1.
+            @param {Double} negBoost A positive <code>double</code> value where 0 < n < 1.
             @returns {Object} returns <code>this</code> so that calls can be chained.
             */
       negativeBoost: function (negBoost) {

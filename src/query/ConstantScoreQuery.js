@@ -24,9 +24,7 @@
      */
   ejs.ConstantScoreQuery = function () {
 
-    var
-      _common = ejs.QueryMixin('constant_score'),
-      query = _common.toJSON();
+    let _common = ejs.QueryMixin('constant_score'), query = _common.toJSON();
 
     return extend(_common, {
       /**

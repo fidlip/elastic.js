@@ -17,9 +17,7 @@
     */
   ejs.RangeFilter = function (field) {
 
-    var
-      _common = ejs.FilterMixin('range'),
-      filter = _common.toJSON();
+    let _common = ejs.FilterMixin('range'), filter = _common.toJSON();
 
     filter.range[field] = {};
 
@@ -33,7 +31,7 @@
              @returns {Object} returns <code>this</code> so that calls can be chained.
              */
       field: function (f) {
-        var oldValue = filter.range[field];
+        let oldValue = filter.range[field];
 
         if (f == null) {
           return field;

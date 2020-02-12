@@ -20,9 +20,7 @@
     */
   ejs.BoolFilter = function () {
 
-    var
-      _common = ejs.FilterMixin('bool'),
-      filter = _common.toJSON();
+    let _common = ejs.FilterMixin('bool'), filter = _common.toJSON();
 
     return extend(_common, {
 
@@ -38,7 +36,7 @@
              @returns {Object} returns <code>this</code> so that calls can be chained.
              */
       must: function (oFilter) {
-        var i, len;
+        let i, len;
         
         if (filter.bool.must == null) {
           filter.bool.must = [];
@@ -78,7 +76,7 @@
              @returns {Object} returns <code>this</code> so that calls can be chained.
              */
       mustNot: function (oFilter) {
-        var i, len;
+        let i, len;
         
         if (filter.bool.must_not == null) {
           filter.bool.must_not = [];
@@ -118,7 +116,7 @@
              @returns {Object} returns <code>this</code> so that calls can be chained.
              */
       should: function (oFilter) {
-        var i, len;
+        let i, len;
         
         if (filter.bool.should == null) {
           filter.bool.should = [];

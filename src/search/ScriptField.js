@@ -16,7 +16,7 @@
 
     */
   ejs.ScriptField = function (fieldName) {
-    var script = {};
+    let script = {};
 
     script[fieldName] = {};
 

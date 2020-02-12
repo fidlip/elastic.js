@@ -15,9 +15,7 @@
     */
   ejs.RandomScoreFunction = function () {
 
-    var
-      _common = ejs.ScoreFunctionMixin('random_score'),
-      func = _common.toJSON();
+    let _common = ejs.ScoreFunctionMixin('random_score'), func = _common.toJSON();
 
     return extend(_common, {
 

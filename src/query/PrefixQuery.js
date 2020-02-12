@@ -16,9 +16,7 @@
     */
   ejs.PrefixQuery = function (field, value) {
 
-    var
-      _common = ejs.QueryMixin('prefix'),
-      query = _common.toJSON();
+    let _common = ejs.QueryMixin('prefix'), query = _common.toJSON();
 
     query.prefix[field] = {
       value: value
@@ -34,7 +32,7 @@
              @returns {Object} returns <code>this</code> so that calls can be chained.
              */
       field: function (f) {
-        var oldValue = query.prefix[field];
+        let oldValue = query.prefix[field];
   
         if (f == null) {
           return field;

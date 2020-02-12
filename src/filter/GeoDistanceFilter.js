@@ -19,9 +19,7 @@
     */
   ejs.GeoDistanceFilter = function (fieldName) {
 
-    var
-      _common = ejs.FilterMixin('geo_distance'),
-      filter = _common.toJSON();
+    let _common = ejs.FilterMixin('geo_distance'), filter = _common.toJSON();
 
     filter.geo_distance[fieldName] = [0, 0];
     
@@ -35,7 +33,7 @@
             @returns {Object} returns <code>this</code> so that calls can be chained.
             */
       field: function (f) {
-        var oldValue = filter.geo_distance[fieldName];
+        let oldValue = filter.geo_distance[fieldName];
     
         if (f == null) {
           return fieldName;
@@ -62,11 +60,11 @@
           return filter.geo_distance.distance;
         }
       
-        if (!isNumber(numericDistance)) {
-          throw new TypeError('Argument must be a numeric value');
+        if (!isNumber(numericDistance) && !isString(numericDistance)) {
+          throw new TypeError('Argument must be a numeric or string value');
         }
         
-        filter.geo_distance.distance = numericDistance;
+        filter.geo_distance.distance = numericDistance + '';
         return this;
       },
 

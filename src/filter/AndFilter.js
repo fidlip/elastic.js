@@ -18,11 +18,7 @@
     */
   ejs.AndFilter = function (f) {
 
-    var
-      i,
-      len,
-      _common = ejs.FilterMixin('and'),
-      filter = _common.toJSON();
+    let i, len, _common = ejs.FilterMixin('and'), filter = _common.toJSON();
     
     filter.and.filters = [];
     
@@ -52,8 +48,7 @@
              @returns {Object} returns <code>this</code> so that calls can be chained.
              */
       filters: function (fltr) {
-        var i,
-          len;
+        let i, len;
           
         if (fltr == null) {
           return filter.and.filters;

@@ -9,7 +9,7 @@
     <p>Defines an operation that rescores a query with another query.</p>
 
     @param {Number} windowSize The optional number of documents to reorder per shard.
-    @param {Query} windowSize The optional query to use for rescoring.
+    @param {Query} qry The optional query to use for rescoring.
 
     */
   ejs.Rescore = function (windowSize, qry) {
@@ -22,8 +22,8 @@
       throw new TypeError('Argument must be a Query');
     }
     
-    var rescore = {
-      query: {}
+    let rescore = {
+      query: {},
     };
 
     if (windowSize != null) {

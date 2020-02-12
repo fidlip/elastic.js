@@ -23,9 +23,7 @@
       throw new TypeError('Argument must be a SpanQuery');
     }
     
-    var 
-      _common = ejs.QueryMixin('span_first'),
-      query = _common.toJSON();
+    let _common = ejs.QueryMixin('span_first'), query = _common.toJSON();
     
     query.span_first.match = spanQry.toJSON();
     query.span_first.end = end;

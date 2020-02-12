@@ -8,7 +8,7 @@
     */
   ejs.AggregationMixin = function (name) {
 
-    var aggs = {};
+    let aggs = {};
     aggs[name] = {};
 
     return {

@@ -17,9 +17,7 @@
     */
   ejs.LimitFilter = function (limit) {
 
-    var 
-      _common = ejs.FilterMixin('limit'),
-      filter = _common.toJSON();
+    let _common = ejs.FilterMixin('limit'), filter = _common.toJSON();
     
     filter.limit.value = limit;
 

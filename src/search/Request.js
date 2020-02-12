@@ -7,12 +7,6 @@
 
     @desc
     <p>Provides methods for generating request bodies.</p>
-
-    @param {Object} conf A configuration object containing the initilization
-      parameters.  The following parameters can be set in the conf object:
-        indices - single index name or array of index names
-        types - single type name or array of types
-        routing - the shard routing value
     */
   ejs.Request = function () {
 
@@ -21,9 +15,31 @@
         @member ejs.Request
         @property {Object} query
         */
-    var query = {};
+    let query = {};
 
     return {
+
+      /**
+       Pagination of results can be done by using the from and size but the cost becomes prohibitive
+       when the deep pagination is reached. The index.max_result_window which defaults to 10,000
+       is a safeguard, search requests take heap memory and time proportional to from + size.
+       The Scroll api is recommended for efficient deep scrolling but scroll contexts are costly and
+       it is not recommended to use it for real time user requests. The search_after parameter
+       circumvents this problem by providing a live cursor. The idea is to use the results from the
+       previous page to help the retrieval of the next page.
+
+       @member ejs.Request
+       @param {Array} sa The offset at which to start fetching results/documents from the result set.
+       @returns {Object} returns <code>this</code> so that calls can be chained.
+       */
+      searchAfter: function(sa) {
+        if (sa == null) {
+          return query.search_after;
+        }
+
+        query.search_after = sa;
+        return this;
+      },
 
       /**
             <p>Sets the sorting for the query.  This accepts many input formats.</p>
@@ -47,8 +63,8 @@
             @param {String} fieldName The field to be sorted by.
             @returns {Object} returns <code>this</code> so that calls can be chained.
             */
-      sort: function () {
-        var i, len;
+      sort: function (fieldName) {
+        let i, len;
 
         if (!has(query, "sort")) {
           query.sort = [];
@@ -60,7 +76,7 @@
 
         // if passed a single argument
         if (arguments.length === 1) {
-          var sortVal = arguments[0];
+          let sortVal = fieldName;
 
           if (isString(sortVal)) {
             // add  a single field name
@@ -88,13 +104,12 @@
           }
         } else if (arguments.length === 2) {
           // handle the case where a single field name and order are passed
-          var field = arguments[0],
-            order = arguments[1];
+          let field = fieldName, order = arguments[1];
 
           if (isString(field) && isString(order)) {
             order = order.toLowerCase();
             if (order === 'asc' || order === 'desc') {
-              var sortObj = {};
+              let sortObj = {};
               sortObj[field] = {order: order};
               query.sort.push(sortObj);
             }
@@ -186,7 +201,7 @@
             fields.
 
             @member ejs.Request
-            @param {(String|String[])} s The field as a string or fields as array
+            @param {(String|String[])} fieldList The field as a string or fields as array
             @returns {Object} returns <code>this</code> so that calls can be chained.
             */
       fields: function (fieldList) {
@@ -202,6 +217,26 @@
           query.fields.push(fieldList);
         } else if (isArray(fieldList)) {
           query.fields = fieldList;
+        } else {
+          throw new TypeError('Argument must be a string or an array');
+        }
+
+        return this;
+      },
+
+      fieldDataFields: function(fieldList) {
+        if (fieldList == null) {
+          return query.fielddata_fields;
+        }
+
+        if (query.fielddata_fields == null) {
+          query.fielddata_fields = [];
+        }
+
+        if (isString(fieldList)) {
+          query.fielddata_fields.push(fieldList);
+        } else if (isArray(fieldList)) {
+          query.fielddata_fields = fieldList;
         } else {
           throw new TypeError('Argument must be a string or an array');
         }

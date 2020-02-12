@@ -19,9 +19,7 @@
     */
   ejs.IdsFilter = function (ids) {
 
-    var
-      _common = ejs.FilterMixin('ids'),
-      filter = _common.toJSON(); 
+    let _common = ejs.FilterMixin('ids'), filter = _common.toJSON();
   
     if (isString(ids)) {
       filter.ids.values = [ids];

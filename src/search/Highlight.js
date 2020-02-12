@@ -24,7 +24,7 @@
     */
   ejs.Highlight = function (fields) {
 
-    var highlight = {
+    let highlight = {
       fields: {}
     },
 

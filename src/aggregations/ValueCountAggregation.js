@@ -24,9 +24,7 @@
     */
   ejs.ValueCountAggregation = function (name) {
 
-    var
-      _common = ejs.MetricsAggregationMixin(name, 'value_count'),
-      agg = _common.toJSON();
+    let _common = ejs.MetricsAggregationMixin(name, 'value_count'), agg = _common.toJSON();
 
     // not supported in value count aggregation
     delete _common.scriptValuesSorted;

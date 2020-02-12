@@ -22,12 +22,11 @@
     */
   ejs.DecayScoreFunction = function (field) {
 
-    var
-      mode = 'gauss', // default decay function
+    let mode = 'gauss', // default decay function
       _common = ejs.ScoreFunctionMixin(mode),
       func = _common.toJSON(),
       changeMode = function (newMode) {
-        var oldValue;
+        let oldValue;
         if (mode !== newMode) {
           oldValue = func[mode];
           delete func[mode];
@@ -78,7 +77,7 @@
       @returns {Object} returns <code>this</code> so that calls can be chained.
       */
       field: function (f) {
-        var oldValue = func[mode][field];
+        let oldValue = func[mode][field];
 
         if (f == null) {
           return field;

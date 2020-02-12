@@ -20,9 +20,7 @@
     */
   ejs.TermFilter = function (fieldName, term) {
 
-    var
-      _common = ejs.FilterMixin('term'),
-      filter = _common.toJSON();
+    let _common = ejs.FilterMixin('term'), filter = _common.toJSON();
 
     filter.term[fieldName] = term;
 
@@ -39,7 +37,7 @@
               the termFilter object.
              */
       field: function (f) {
-        var oldValue = filter.term[fieldName];
+        let oldValue = filter.term[fieldName];
       
         if (f == null) {
           return fieldName;

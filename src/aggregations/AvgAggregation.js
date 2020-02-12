@@ -24,9 +24,5 @@
     */
   ejs.AvgAggregation = function (name) {
 
-    var
-      _common = ejs.MetricsAggregationMixin(name, 'avg'),
-      agg = _common.toJSON();
-
-    return _common;
+    return ejs.MetricsAggregationMixin(name, 'avg');
   };

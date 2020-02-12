@@ -26,9 +26,7 @@
     */
   ejs.CommonTermsQuery = function (field, qstr) {
 
-    var
-      _common = ejs.QueryMixin('common'),
-      query = _common.toJSON();
+    let _common = ejs.QueryMixin('common'), query = _common.toJSON();
   
     // support for full Builder functionality where no constructor is used
     // use dummy field until one is set
@@ -53,7 +51,7 @@
             @returns {Object} returns <code>this</code> so that calls can be chained.
             */
       field: function (f) {
-        var oldValue = query.common[field];
+        let oldValue = query.common[field];
     
         if (f == null) {
           return field;

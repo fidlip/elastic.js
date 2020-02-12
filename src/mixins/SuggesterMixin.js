@@ -9,7 +9,7 @@
     */
   ejs.SuggesterMixin = function (name) {
   
-    var suggest = {};
+    let suggest = {};
     suggest[name] = {};
 
     return {

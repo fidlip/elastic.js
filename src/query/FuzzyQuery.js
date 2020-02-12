@@ -23,9 +23,7 @@
      */
   ejs.FuzzyQuery = function (field, value) {
 
-    var
-      _common = ejs.QueryMixin('fuzzy'),
-      query = _common.toJSON();
+    let _common = ejs.QueryMixin('fuzzy'), query = _common.toJSON();
 
     query.fuzzy[field] = {
       value: value
@@ -41,7 +39,7 @@
              @returns {Object} returns <code>this</code> so that calls can be chained.
              */
       field: function (f) {
-        var oldValue = query.fuzzy[field];
+        let oldValue = query.fuzzy[field];
     
         if (f == null) {
           return field;
@@ -58,7 +56,7 @@
             <p>The query text to fuzzify.</p>
 
             @member ejs.FuzzyQuery
-            @param {String} s A text string.
+            @param {String} txt A text string.
             @returns {Object} returns <code>this</code> so that calls can be chained.
             */
       value: function (txt) {

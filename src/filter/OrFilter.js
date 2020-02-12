@@ -17,11 +17,7 @@
     */
   ejs.OrFilter = function (filters) {
 
-    var
-      i, 
-      len,
-      _common = ejs.FilterMixin('or'),
-      filter = _common.toJSON();
+    let i, len, _common = ejs.FilterMixin('or'), filter = _common.toJSON();
 
     filter.or.filters = [];
 
@@ -51,7 +47,7 @@
              @returns {Object} returns <code>this</code> so that calls can be chained.
              */
       filters: function (fltr) {
-        var i, len;
+        let i, len;
         
         if (fltr == null) {
           return filter.or.filters;

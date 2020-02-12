@@ -23,10 +23,7 @@
     */
   ejs.CompletionSuggester = function (name) {
 
-    var
-      _context,
-      _common = ejs.SuggesterMixin(name),
-      suggest = _common.toJSON();
+    let _context, _common = ejs.SuggesterMixin(name), suggest = _common.toJSON();
     
     suggest[name].completion = {};
     _context = ejs.SuggestContextMixin(suggest[name].completion);

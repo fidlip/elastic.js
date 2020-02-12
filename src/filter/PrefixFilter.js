@@ -19,9 +19,7 @@
     */
   ejs.PrefixFilter = function (fieldName, prefix) {
 
-    var
-      _common = ejs.FilterMixin('prefix'),
-      filter = _common.toJSON();
+    let _common = ejs.FilterMixin('prefix'), filter = _common.toJSON();
 
     filter.prefix[fieldName] = prefix;
     
@@ -36,7 +34,7 @@
               chained. Returns {String}, field name when field is not specified.
              */
       field: function (field) {
-        var oldValue = filter.prefix[fieldName];
+        let oldValue = filter.prefix[fieldName];
       
         if (field == null) {
           return fieldName;

@@ -18,9 +18,7 @@
     */
   ejs.BoostFactorScoreFunction = function (boostVal) {
 
-    var
-      _common = ejs.ScoreFunctionMixin('boost_factor'),
-      func = _common.toJSON();
+    let _common = ejs.ScoreFunctionMixin('boost_factor'), func = _common.toJSON();
 
     func.boost_factor = boostVal;
 

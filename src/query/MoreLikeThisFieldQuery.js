@@ -17,9 +17,7 @@
      */
   ejs.MoreLikeThisFieldQuery = function (field, likeText) {
 
-    var
-      _common = ejs.QueryMixin('mlt_field'),
-      query = _common.toJSON();
+    let _common = ejs.QueryMixin('mlt_field'), query = _common.toJSON();
 
     query.mlt_field[field] = {
       like_text: likeText
@@ -35,7 +33,7 @@
              @returns {Object} returns <code>this</code> so that calls can be chained.
              */
       field: function (f) {
-        var oldValue = query.mlt_field[field];
+        let oldValue = query.mlt_field[field];
     
         if (f == null) {
           return field;
@@ -52,7 +50,7 @@
             The text to find documents like
 
             @member ejs.MoreLikeThisFieldQuery
-            @param {String} s A text string.
+            @param {String} txt A text string.
             @returns {Object} returns <code>this</code> so that calls can be chained.
             */
       likeText: function (txt) {

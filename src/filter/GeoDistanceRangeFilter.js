@@ -19,9 +19,7 @@
     */
   ejs.GeoDistanceRangeFilter = function (fieldName) {
 
-    var
-      _common = ejs.FilterMixin('geo_distance_range'),
-      filter = _common.toJSON();
+    let _common = ejs.FilterMixin('geo_distance_range'), filter = _common.toJSON();
 
     filter.geo_distance_range[fieldName] = [0, 0];
     
@@ -35,7 +33,7 @@
             @returns {Object} returns <code>this</code> so that calls can be chained.
             */
       field: function (f) {
-        var oldValue = filter.geo_distance_range[fieldName];
+        let oldValue = filter.geo_distance_range[fieldName];
 
         if (f == null) {
           return fieldName;

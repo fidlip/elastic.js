@@ -17,9 +17,7 @@
     */
   ejs.TypeFilter = function (type) {
 
-    var 
-    _common = ejs.FilterMixin('type'),
-    filter = _common.toJSON();
+    let _common = ejs.FilterMixin('type'), filter = _common.toJSON();
     
     filter.type.value = type;
 

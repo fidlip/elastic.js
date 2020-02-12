@@ -38,9 +38,7 @@
     */
   ejs.StatisticalFacet = function (name) {
 
-    var 
-      _common = ejs.FacetMixin(name),
-      facet = _common.toJSON();
+    let _common = ejs.FacetMixin(name), facet = _common.toJSON();
 
     facet[name].statistical = {};
 
@@ -66,7 +64,7 @@
             Aggregate statistical info across a set of fields.
 
             @member ejs.StatisticalFacet
-            @param {Array} aFieldName An array of field names.
+            @param {Array} fields An array of field names.
             @returns {Object} returns <code>this</code> so that calls can be chained.
             */
       fields: function (fields) {

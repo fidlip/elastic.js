@@ -17,9 +17,7 @@
     */
   ejs.IdsQuery = function (ids) {
 
-    var
-      _common = ejs.QueryMixin('ids'),
-      query = _common.toJSON();
+    let _common = ejs.QueryMixin('ids'), query = _common.toJSON();
     
     if (isString(ids)) {
       query.ids.values = [ids];

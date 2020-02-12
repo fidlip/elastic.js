@@ -17,9 +17,7 @@
     */
   ejs.ScriptFilter = function (script) {
 
-    var
-      _common = ejs.FilterMixin('script'),
-      filter = _common.toJSON();
+    let _common = ejs.FilterMixin('script'), filter = _common.toJSON();
     
     filter.script.script = script;
 
