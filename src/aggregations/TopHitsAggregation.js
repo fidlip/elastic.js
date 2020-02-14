@@ -47,7 +47,7 @@
       <p> Sets the maximum number of top matching hits to return per bucket. </p>
 
       @member ejs.TopHitsAggregation
-      @param {Integer} size The numer of aggregation entries to be returned per bucket.
+      @param {Integer} size The number of aggregation entries to be returned per bucket.
       @returns {Object} returns <code>this</code> so that calls can be chained.
       */
       size: function (size) {

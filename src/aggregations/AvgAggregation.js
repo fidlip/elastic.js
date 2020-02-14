@@ -1,5 +1,6 @@
   /**
     @class
+    @extends Aggregation
     <p>A single-value metrics aggregation that computes the average of numeric
     values that are extracted from the aggregated documents. These values can be
     extracted either from specific numeric fields in the documents, or be

@@ -101,7 +101,7 @@
             unique authors.
 
             @member ejs.TermsFacet
-            @param {Integer} facetSize The numer of facet entries to be returned.
+            @param {Integer} facetSize The number of facet entries to be returned.
             @returns {Object} returns <code>this</code> so that calls can be chained.
             */
       size: function (facetSize) {
@@ -119,7 +119,7 @@
             each shard.
 
             @member ejs.TermsFacet
-            @param {Integer} shardSize The numer of terms to fetch from each shard.
+            @param {Integer} shardSize The number of terms to fetch from each shard.
             @returns {Object} returns <code>this</code> so that calls can be chained.
             */
       shardSize: function (shardSize) {

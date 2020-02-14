@@ -1,10 +1,12 @@
+'use strict';
+
 /**
  @namespace
  @name ejs
  @desc All elastic.js modules are organized under the ejs namespace.
  */
-(function () {
-  'use strict';
+// noinspection ThisExpressionReferencesGlobalObjectJS
+function elastic() {
 
   // noinspection JSUnusedLocalSymbols
   let
@@ -12,6 +14,7 @@
     // save reference to global object
     // `window` in browser
     // `exports` on server
+    /* jshint validthis: true */
     root = this,
 
     // save the previous version of ejs

@@ -10,7 +10,7 @@ module.exports = function (grunt) {
         '<%= grunt.template.today("yyyy-mm-dd") %>\n' +
         '<%= pkg.homepage ? " * " + pkg.homepage + "\\n" : "" %>' +
         ' * Copyright (c) <%= grunt.template.today("yyyy") %> <%= pkg.author.name %>;' +
-        ' Licensed <%= _.pluck(pkg.licenses, "type").join(", ") %> */\n\n'
+        ' Licensed <%= _.map(pkg.licenses, "type").join(", ") %> */\n\n'
     },
     concat: {
       options: {
@@ -47,6 +47,7 @@ module.exports = function (grunt) {
     },
     jshint: {
       options: {
+        esversion: 6,
         bitwise: true,
         curly: true,
         eqeqeq: true,
@@ -76,7 +77,7 @@ module.exports = function (grunt) {
   // load plugins
   grunt.loadNpmTasks('grunt-contrib-concat');
   grunt.loadNpmTasks('grunt-contrib-jshint');
-  grunt.loadNpmTasks('grunt-contrib-uglify');
+  grunt.loadNpmTasks('grunt-contrib-uglify-es');
   grunt.loadNpmTasks('grunt-contrib-nodeunit');
 
   // Default task.

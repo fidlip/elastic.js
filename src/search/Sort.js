@@ -217,7 +217,7 @@
              Valid during sort types:  geo distance
            
              @member ejs.Sort
-             @param {Number} unit the unit of distance measure.
+             @param {String} unit the unit of distance measure.
              @returns {Object} returns <code>this</code> so that calls can be chained.
              */
       unit: function (unit) {

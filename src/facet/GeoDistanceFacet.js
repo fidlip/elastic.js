@@ -153,7 +153,7 @@
              for kilometers. Defaults to "km".
 
              @member ejs.GeoDistanceFacet
-             @param {Number} unit the unit of distance measure.
+             @param {String} unit the unit of distance measure.
              @returns {Object} returns <code>this</code> so that calls can be chained.
              */
       unit: function (unit) {

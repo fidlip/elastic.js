@@ -51,7 +51,7 @@
       in, yd, ft, km, NM, mm, cm, mi, and m.
 
       @member ejs.GeoDistanceAggregation
-      @param {Number} unit the unit of distance measure.
+      @param {String} unit the unit of distance measure.
       @returns {Object} returns <code>this</code> so that calls can be chained.
       */
       unit: function (unit) {

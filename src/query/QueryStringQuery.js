@@ -67,7 +67,7 @@
             boost of 10.
 
             @member ejs.QueryStringQuery
-            @param {Array} fieldNames A list of document fields/properties.
+            @param {Array|String} fieldNames A list of document fields/properties.
             @returns {Object} returns <code>this</code> so that calls can be chained.
             */
       fields: function (fieldNames) {

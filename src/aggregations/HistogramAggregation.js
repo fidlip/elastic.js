@@ -141,7 +141,7 @@
       Only return terms that match more than a configured number of hits.
 
       @member ejs.HistogramAggregation
-      @param {Integer} num The numer of minimum number of hits.
+      @param {Integer} num The number of minimum number of hits.
       @returns {Object} returns <code>this</code> so that calls can be chained.
       */
       minDocCount: function (num) {

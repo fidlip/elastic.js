@@ -158,7 +158,7 @@
             internal API functions so use with caution.
 
             @member ejs.Rescore
-            @returns {String} returns this object's internal object representation.
+            @returns {{query: {}}} returns this object's internal object representation.
             */
       toJSON: function () {
         return rescore;

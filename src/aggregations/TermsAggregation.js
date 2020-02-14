@@ -224,7 +224,7 @@
       Sets the number of aggregation entries that will be returned.
 
       @member ejs.TermsAggregation
-      @param {Integer} size The numer of aggregation entries to be returned.
+      @param {Integer} size The number of aggregation entries to be returned.
       @returns {Object} returns <code>this</code> so that calls can be chained.
       */
       size: function (size) {
@@ -242,7 +242,7 @@
       each shard.
 
       @member ejs.TermsAggregation
-      @param {Integer} shardSize The numer of terms to fetch from each shard.
+      @param {Integer} shardSize The number of terms to fetch from each shard.
       @returns {Object} returns <code>this</code> so that calls can be chained.
       */
       shardSize: function (shardSize) {
@@ -258,7 +258,7 @@
       Only return terms that match more than a configured number of hits.
 
       @member ejs.TermsAggregation
-      @param {Integer} num The numer of minimum number of hits.
+      @param {Integer} num The number of minimum number of hits.
       @returns {Object} returns <code>this</code> so that calls can be chained.
       */
       minDocCount: function (num) {

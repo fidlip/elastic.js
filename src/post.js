@@ -4,4 +4,6 @@
     return this;
   };
   
-}).call(this);
+}
+
+elastic();

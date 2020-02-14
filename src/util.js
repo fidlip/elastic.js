@@ -48,6 +48,7 @@
 
   // Returns the index at which value can be found in the array, or -1 if
   // value is not present in the array.
+  // noinspection JSUnusedAssignment
   indexOf = function (array, item) {
     if (array == null) {
       return -1;
@@ -142,10 +143,12 @@
     return (isEJSObject(obj) && obj._type() === 'geo point');
   };
 
+  // noinspection JSUnusedAssignment
   isIndexedShape = function (obj) {
     return (isEJSObject(obj) && obj._type() === 'indexed shape');
   };
 
+  // noinspection JSUnusedAssignment
   isShape = function (obj) {
     return (isEJSObject(obj) && obj._type() === 'shape');
   };

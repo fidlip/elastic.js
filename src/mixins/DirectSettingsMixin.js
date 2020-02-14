@@ -6,7 +6,7 @@
 
     @name ejs.DirectSettingsMixin
   
-    @param {String} settings The object to set the options on.
+    @param {Object} settings The object to set the options on.
     */
   ejs.DirectSettingsMixin = function (settings) {
 
@@ -18,7 +18,7 @@
 
             @member ejs.DirectSettingsMixin
             @param {Double} a A positive double value between 0 and 1.
-            @returns {Object} returns <code>this</code> so that calls can be chained.
+            @returns {Double} returns <code>this</code> so that calls can be chained.
             */
       accuracy: function (a) {
         if (a == null) {
@@ -40,7 +40,7 @@
 
             @member ejs.DirectSettingsMixin
             @param {String} m The mode of missing, popular, or always.
-            @returns {Object} returns <code>this</code> so that calls can be chained.
+            @returns {string | string} returns <code>this</code> so that calls can be chained.
             */
       suggestMode: function (m) {
         if (m == null) {
@@ -65,7 +65,7 @@
 
             @member ejs.DirectSettingsMixin
             @param {String} s The score type of score or frequency.
-            @returns {Object} returns <code>this</code> so that calls can be chained.
+            @returns {string | string} returns <code>this</code> so that calls can be chained.
             */
       sort: function (s) {
         if (s == null) {
@@ -94,7 +94,7 @@
 
             @member ejs.DirectSettingsMixin
             @param {String} s The string distance algorithm name.
-            @returns {Object} returns <code>this</code> so that calls can be chained.
+            @returns {string | string} returns <code>this</code> so that calls can be chained.
             */
       stringDistance: function (s) {
         if (s == null) {
@@ -116,7 +116,7 @@
 
             @member ejs.DirectSettingsMixin
             @param {Integer} max An integer value greater than 0.
-            @returns {Object} returns <code>this</code> so that calls can be chained.
+            @returns {Integer} returns <code>this</code> so that calls can be chained.
             */
       maxEdits: function (max) {
         if (max == null) {
@@ -133,7 +133,7 @@
 
             @member ejs.DirectSettingsMixin
             @param {Integer} max A positive integer value.
-            @returns {Object} returns <code>this</code> so that calls can be chained.
+            @returns {Integer} returns <code>this</code> so that calls can be chained.
             */
       maxInspections: function (max) {
         if (max == null) {
@@ -150,7 +150,7 @@
 
             @member ejs.DirectSettingsMixin
             @param {Double} max A positive double value.
-            @returns {Object} returns <code>this</code> so that calls can be chained.
+            @returns {Double} returns <code>this</code> so that calls can be chained.
             */
       maxTermFreq: function (max) {
         if (max == null) {
@@ -167,7 +167,7 @@
 
             @member ejs.DirectSettingsMixin
             @param {Integer} len A positive integer value.
-            @returns {Object} returns <code>this</code> so that calls can be chained.
+            @returns {Integer} returns <code>this</code> so that calls can be chained.
             */
       prefixLen: function (len) {
         if (len == null) {
@@ -184,7 +184,7 @@
 
             @member ejs.DirectSettingsMixin
             @param {Integer} len A positive integer value.
-            @returns {Object} returns <code>this</code> so that calls can be chained.
+            @returns {Integer} returns <code>this</code> so that calls can be chained.
             */
       minWordLen: function (len) {
         if (len == null) {
@@ -201,7 +201,7 @@
 
             @member ejs.DirectSettingsMixin
             @param {Double} min A positive double value.
-            @returns {Object} returns <code>this</code> so that calls can be chained.
+            @returns {Double} returns <code>this</code> so that calls can be chained.
             */
       minDocFreq: function (min) {
         if (min == null) {

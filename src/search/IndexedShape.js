@@ -105,7 +105,7 @@
             internal API functions so use with caution.
 
             @member ejs.IndexedShape
-            @returns {String} returns this object's internal object representation.
+            @returns {{id: String, type: String}} returns this object's internal object representation.
             */
       toJSON: function () {
         return indexedShape;

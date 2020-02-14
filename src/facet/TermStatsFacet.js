@@ -166,7 +166,7 @@
             unique keys. <strong>Higher settings could cause memory strain</strong>.
 
             @member ejs.TermStatsFacet
-            @param {Integer} facetSize The numer of facet entries to be returned.
+            @param {Integer} facetSize The number of facet entries to be returned.
             @returns {Object} returns <code>this</code> so that calls can be chained.
             */
       size: function (facetSize) {

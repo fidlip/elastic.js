@@ -437,7 +437,7 @@
             internal API functions so use with caution.
 
             @member ejs.Highlight
-            @returns {String} returns this object's internal object representation.
+            @returns {{fields: {}}} returns this object's internal object representation.
             */
       toJSON: function () {
         return highlight;

@@ -64,7 +64,7 @@
       Sets the number of aggregation entries that will be returned.
 
       @member ejs.GeoHashGridAggregation
-      @param {Integer} size The numer of aggregation entries to be returned.
+      @param {Integer} size The number of aggregation entries to be returned.
       @returns {Object} returns <code>this</code> so that calls can be chained.
       */
       size: function (size) {
@@ -82,7 +82,7 @@
       each shard.
 
       @member ejs.GeoHashGridAggregation
-      @param {Integer} shardSize The numer of geohash_grid to fetch from each shard.
+      @param {Integer} shardSize The number of geohash_grid to fetch from each shard.
       @returns {Object} returns <code>this</code> so that calls can be chained.
       */
       shardSize: function (shardSize) {
